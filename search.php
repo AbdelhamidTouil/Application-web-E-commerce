@@ -1,33 +1,28 @@
-
-<!-- includes -->
-
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
 <?php include ('navigation.php')  ?>
 
 
-    
-<div class="row">
-<!--card cities -->
-<div class="card mt-4  mx-3" style="width: 14rem;">
-  <div class="card-header">
-  Cities
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Oujda <span class="city  p-2 float-end">1</span></li>
-    <li class="list-group-item">Tanger <span class="city  p-2 float-end">2</span></li>
-    <li class="list-group-item">Rabat <span class="city  p-2 float-end">3</span></li>
-    <li class="list-group-item">caza <span class="city  p-2 float-end">1</span></li>
-    <li class="list-group-item">berkan <span class="city  p-2 float-end">2</span></li>
-    <li class="list-group-item">jrrada <span class="city  p-2 float-end">3</span></li>
-  </ul>
-</div> <!-- end card-->
-<!--end card cities-->
+
+  <?php   $search = $_POST['search']; 
+  $sql = "SELECT * FROM products WHERE product_title  LIKE '%$search%' 
+  ||  product_description  LIKE '%$search%' ";
+  $result = query($sql);
+  
+  ?>
+  
+
+
+  
+
+
+
+  <div class="row">
 <!--cart   product-->
 <?php
- $query = "SELECT * from products";
- $result = query($query);
+if($result -> num_rows > 0)
+{
 while ($row = fetch_array($result))
 {
  ?>
@@ -46,6 +41,10 @@ while ($row = fetch_array($result))
 <!-- end card 2-->
 <?php 
 }
+}
+else{
+    echo 'no product find ';
+}
  ?>
 
 
@@ -61,4 +60,21 @@ while ($row = fetch_array($result))
 
 
 </div><!-- end row-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php include ('includes/footer.php')  ?>

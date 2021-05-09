@@ -1,5 +1,8 @@
+<?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
+<?php include ('navigation.php')  ?>
+
 
 
     
@@ -7,9 +10,9 @@
 
 <!--cart 2 -->
 
-<div class="card mt-4"  style="width: 18rem;">
+<div class="card mt-4 mx-3"  style="width: 18rem;">
 <h5 class="card-title">Shop</h5>
-  <img src="images/pc.jpg" class="  card-img-top" alt="...">
+  <img src="images/pc.jpg" class="  card-img-top" alt="image not found">
   
    <h3 class="card-text">Laptob</h3>
   

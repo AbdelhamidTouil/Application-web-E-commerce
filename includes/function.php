@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('config.php');
 /******************/
 function redirect($location)
@@ -24,14 +25,14 @@ function fetch_array($result)
     return mysqli_fetch_array($result);
 }
 
-function logout()
+/*function logout()
 {
     $_SESSION['logged']=false;
     session_destroy();
     redirect('index.php');
-}
+}*/
 
-function empty_cart($id,$price)
+/*function empty_cart($id,$price)
 {
 
     unset($_SESSION['product'.$id]);
@@ -39,7 +40,7 @@ function empty_cart($id,$price)
     $_SESSION['totaux'] -= $price;
     redirect('cart.php');
 
-}
+}*/
 
 
 
