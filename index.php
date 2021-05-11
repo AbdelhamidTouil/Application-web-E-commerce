@@ -4,13 +4,13 @@
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
-<?php include ('navigation.php')  ?>
 
 
-    
 <div class="row">
+
+
 <!--card cities -->
-<div class="card mt-4  mx-3" style="width: 14rem;">
+<div class="card mt-4  mx-4" style="width: 14rem;">
   <div class="card-header">
   Cities
   </div>
@@ -24,6 +24,23 @@
   </ul>
 </div> <!-- end card-->
 <!--end card cities-->
+
+
+<div class="w3-content w3-section" style=" max-width:700px ; max-height:400px">
+  <img class="mySlides" src="images/pc.jpg" style="width:100% ;height:100%">
+  <img class="mySlides" src="images/tablete.jpg" style="width:100% ;height:100%">
+  <img class="mySlides" src="images/product5.jpg" style="width:100%; height:100%">
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="row">
+
 <!--cart   product-->
 <?php
  $query = "SELECT * from products";
@@ -32,13 +49,13 @@ while ($row = fetch_array($result))
 {
  ?>
 
-<div class="card mt-4" style="width: 14rem;">
-<h5 class="card-title">Shop</h5>
-  <img src="images/<?php echo $row['product_image'] ?>" class="card-img-top" alt="image not found">
+<div class="card mt-4 mx-4" style="width: 14rem; height:25rem;">
+<h5 class="card-title"><?php echo $row['product_title'] ?></h5>
+  <img src="images/<?php echo $row['product_image'] ?>" class="card-img-top" alt="image not found" style="height:50%">
   
     <h3 class="card-text"><?php echo $row['product_title'] ?></h3>
   
- <p><span class="badge badge-success bg-dark"><?php echo $row['product_price'].'dh' ?></span>
+ <p><span class="badge badge-success bg-success"><?php echo $row['product_price'].'dh' ?></span>
  <span class="prix_ancienne"> <strike><?php echo $row['old_price'].'dh' ?></strike> </span></p>
   <p class="description"> <?php echo $row['product_description'] ?></p>
     <a href="product_description.php?id=<?php echo $row['product_id'] ?>" class="card-link">see more</a>
@@ -59,6 +76,6 @@ while ($row = fetch_array($result))
 
 
 
-
 </div><!-- end row-->
+<script src="includes/javascript/script.js"></script>
 <?php include ('includes/footer.php')  ?>

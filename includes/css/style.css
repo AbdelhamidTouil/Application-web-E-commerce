@@ -1,6 +1,20 @@
-body{background-color: rgb(230, 234, 235);}
+body{background-color: rgb(230, 234, 235); }
 
 a{text-decoration: none !important;}
 
 #logo{color:rgb(243, 97, 53);font-family: fantasy;}
 .touil{color:rgb(129, 166, 236)}
+.dropdown{color:red;}
+
+
+   
+
+
+.btn_search{color:white;
+background-color: rgb(250, 145, 48);
+border-radius: 5px;
+border-style: none;}
+
+.mySlides {display:none;}
+.row{background-color:rgb(243, 191, 243);}
+.section{padding-left: 20px;padding-right: 20px;}

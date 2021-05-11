@@ -1,10 +1,9 @@
-<?php
-session_start()
-?>
+<!-- includes -->
 
-<?php include('connect.php') ?>
-<?php include ('top_bar.php');?>
-<?php include ('header.php');?>
+<?php include ('includes/function.php') ?>
+<?php include ('includes/logo.php') ?>
+<?php include ('includes/header.php')  ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,36 +16,39 @@ session_start()
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-  <form class="insert_form" action="insert_post.php"  method="post" enctype ="multipart/form-data">
+  <form class="insert_form" action="add_post.php"  method="post" enctype ="multipart/form-data">
 
       <h1 class="titre_center">Insert new post
       </h1>
 
-      <div class="title_author">
+      
+
         <div>
           <label> Post Title:
-          </label>  &nbsp &nbsp &nbsp &nbsp
-          <input type="text" name="title" size="40"/> &nbsp &nbsp &nbsp &nbsp
+          </label> 
+          <input type="text" name="title" size="40"/> 
         </div>
+
         <div>
-          <label> Post Author:
-          </label>  &nbsp &nbsp &nbsp &nbsp
-          <input type="text" name="author" size="40"/>
+          <label> Post description:
+          </label> 
+          <input type="text" name="description" size="40"/>
         </div> 
       </div>
 
-      <div class="imageflex">
+      
+	  <label> Post price:
+        </label>
+		<input type="text" name="price" size="40"/> 
+      </div>
+
         <label class="lbl"> Image:
-        </label> &nbsp &nbsp &nbsp &nbsp
+        </label>
         <input type="file" name="image" size="40"/>      
       </div>
 
-      <div class="post_content">
-        <label> Post content:
-        </label> &nbsp &nbsp &nbsp &nbsp
-        <textarea name="content"  rows="21" cols="70">
-        </textarea>  
-      </div>
+    
+       
 
       <div class="submitt">
         <input  type="submit" name="submit"/>
@@ -56,13 +58,13 @@ session_start()
   </body>
 
 
-  <?php include ('footer.php');?>
+  <?php include ('includes/footer.php');?>
 </html> <!-- enb html -->
 <?php
-include("connect.php");
+
 if(isset($_POST['submit']))
 {
-if($_POST['title']=='' or $_POST['content']=='' or $_POST["author"]=='')
+if($_POST['title']=='' or $_POST['description']=='' or $_POST["price"]=='')
 {
 echo("<script>alert ('fill all the field ')</script>");
 exit();
@@ -71,13 +73,12 @@ exit();
 else
 {
 $title=$_POST['title'];
-$author=$_POST['author'];
-$content=$_POST['content'];
+$description=$_POST['description'];
+$price=$_POST['price'];
 $image_name=$_FILES['image']['name'];
 $image_type=$_FILES['image']['type'];
 $image_size=$_FILES['image']['size'];
 $image_tmp=$_FILES['image']['tmp_name'];
-$date=date('y.m.d');
 if($image_type == "image/jpeg" or $image_type == "image/jpg" or $image_type == "image/png" or $image_type == "image/gif" )
 {
 if($image_size<=1000000000)
@@ -93,16 +94,11 @@ else
 {
 echo("<script> alert('invalid file type' )</script>");
 }
-$conn = mysqli_connect("localhost", "root", "","cms") ;
 
- $loginuser=$_SESSION['LoginUsername'];
-if (isset($loginuser))
+$sql ="INSERT INTO products (product_title,product_description,product_price,product_image) values('$title','$description','$price' ,'$image_name')";
+if(query($sql))
 {
-$query ="INSERT into new_post(user,title,author,image,content,date) values('$loginuser','$title','$author' ,'$image_name','$content','$date')";
-}
-if(mysqli_query($conn,$query))
-{
-echo("<h1>post has been submitted !!</h1>");
+	echo("<script>alert ('post has been submitted !!')</script>");
 }
 }
 }

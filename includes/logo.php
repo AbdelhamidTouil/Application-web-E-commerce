@@ -1,27 +1,28 @@
 
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
+	<div class ="row">
+		<div class="col-md-4" >
 			<a href="" class="btn btn-link"  id="logo" style='font-size: 40px;'> <span class="touil">Touil</span> <span class="shop">Shop</span> </a>
 		</div>
+
 		<div class="col-md-8">
+
 			<div class="float-end">
-				<div class="dropdown">
-					<a class="btn btn-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+				<div class="dropdown ">
+					<a class="btn btn-link dropdown-toggle text-danger " href="#" role="button" id="dropdownMenuLink " >
 					<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Cart
-</a>
+                    </a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<li>
-							<a class="dropdown-item" href="">product</a>
+							<a class="dropdown-item " href="">product:0</a>
 						</li>
 						
 					</ul>
 				</div>
 			</div>
+
 			<div class="float-end">
 				<div class="dropdown">
-					<a class="btn btn-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+					<a class="btn btn-link dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 					<i class="fa fa-user-plus" aria-hidden="true"></i>Connexion
   </a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -34,5 +35,6 @@
 					</ul>
 				</div>
 			</div>
+
 		</div>
 	</div>
