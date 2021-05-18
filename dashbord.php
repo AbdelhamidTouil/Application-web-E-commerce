@@ -1,6 +1,8 @@
-<?php
-session_start();
-?>
+<!-- includes -->
+
+<?php include ('includes/function.php') ?>
+<?php include ('includes/logo.php') ?>
+<?php include ('includes/header.php')  ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -60,19 +62,19 @@ session_start();
             <h1 class="h2">Dashboard
             </h1>
           </div>
-          <?php $user=$_SESSION['LoginUsername']?> 
+          <?php $username=$_SESSION['nom'];?> 
+         
           <!--login name -->
-          <?php  $conn = mysqli_connect("localhost", "root", "","cms") ;
-$query= mysqli_query( $conn ,"select * from new_post where user='$user'");
-while($row=mysqli_fetch_array($query))
+          <?php 
+$query= "SELECT * FROM products ";
+$result=query($query);
+while($row=fetch_array($result))
 {
-$id=$row['id'];
-$user=$row['user'];
-$title=$row["title"];
-$author=$row["author"];
-$image=$row["image"];
-$content= substr($row["content"],0,200);
-$date=$row["date"];
+$id=$row['product_id'];
+$title=$row["product_title"];
+$image=$row["product_image"];
+
+$product_price=$row["product_price"];
 ?>
           <h2>Section title
           </h2>
@@ -83,11 +85,12 @@ $date=$row["date"];
                   <tr>
                     <th>id
                     </th>
-                    <th>users
-                    </th>
+                   
                     <th>title
                     </th>
-                    <th>author
+                    <th>image
+                    </th>
+                    <th>price
                     </th>
                     <th>delete
                     </th>
@@ -101,13 +104,13 @@ $date=$row["date"];
                       <?php echo "$id"; ?>
                     </td>
                     <td>
-                      <?php echo "$user"; ?>
-                    </td>
-                    <td>
                       <?php echo "$title"; ?>
                     </td>
                     <td>
-                      <?php echo "$author"; ?>
+                      <?php echo "$image"; ?>
+                    </td>
+                    <td>
+                      <?php echo "$product_price"; ?>
                     </td>
                     <!--button delete-->
                     <td>

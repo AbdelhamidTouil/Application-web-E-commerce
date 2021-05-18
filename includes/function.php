@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require('config.php');
 /******************/
@@ -25,12 +26,13 @@ function fetch_array($result)
     return mysqli_fetch_array($result);
 }
 
-/*function logout()
+
+function logout()
 {
-    $_SESSION['logged']=false;
+    $_SESSION['logged'] = false;
     session_destroy();
     redirect('index.php');
-}*/
+}
 
 /*function empty_cart($id,$price)
 {

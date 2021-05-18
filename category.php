@@ -1,7 +1,7 @@
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
-<?php include ('navigation.php')  ?>
+
 
 
 
@@ -37,7 +37,7 @@
 </div>
 <?php } 
  else{
-     echo '!!!!!!!!!!!!!!!!!';
+     echo  "product not foond";
  }
 ?>
 

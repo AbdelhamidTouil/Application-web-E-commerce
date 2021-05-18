@@ -35,9 +35,11 @@
         <a class="nav-link" href="contact.php">Contact</a>
         </li>
 
+        <?php   if(isset($_SESSION['logged']) && $_SESSION['logged']==true &&  $_SESSION['nom'] == 'abdelhamid' &&  $_SESSION['password'] == 'abdou123') {?>
         <li class="nav-item">
         <a class="nav-link" href="add_post.php">Add Post</a>
         </li>
+        <?php } ?>
       </ul>
 
       <form action="search.php" method="post" class="d-flex">

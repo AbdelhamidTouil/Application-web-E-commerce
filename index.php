@@ -51,7 +51,7 @@ while ($row = fetch_array($result))
 
 <div class="card mt-4 mx-4" style="width: 14rem; height:25rem;">
 <h5 class="card-title"><?php echo $row['product_title'] ?></h5>
-  <img src="images/<?php echo $row['product_image'] ?>" class="card-img-top" alt="image not found" style="height:50%">
+  <img src="images/<?php echo $row['product_image']; ?>" class="card-img-top" alt="image not found" style="height:50%">
   
     <h3 class="card-text"><?php echo $row['product_title'] ?></h3>
   

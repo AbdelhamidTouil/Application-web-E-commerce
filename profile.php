@@ -6,14 +6,12 @@
 <?php include ('includes/header.php')  ?>
 
 
-
-
-
 <div class="row">
 
+<?php $username=$_SESSION['nom']?> 
 <!--cart   product-->
 <?php
- $query = "SELECT * from products";
+ $query = "SELECT * from products where username='$username'";
  $result = query($query);
 while ($row = fetch_array($result))
 {
@@ -21,7 +19,7 @@ while ($row = fetch_array($result))
 
 <div class="card mt-4 mx-4" style="width: 14rem; height:25rem;">
 <h5 class="card-title"><?php echo $row['product_title'] ?></h5>
-  <img src="images/<?php echo $row['product_image']; ?>" class="card-img-top" alt="image not found" style="height:50%">
+  <img src="images/<?php echo $row['product_image'] ?>" class="card-img-top" alt="image not found" style="height:50%">
   
     <h3 class="card-text"><?php echo $row['product_title'] ?></h3>
   

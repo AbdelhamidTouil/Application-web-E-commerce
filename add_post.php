@@ -14,47 +14,66 @@
     <title>Document
     </title>
     <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
   </head>
   <body>
-  <form class="insert_form" action="add_post.php"  method="post" enctype ="multipart/form-data">
+<!-- formulaire -->
+<form  action="add_post.php"  method="post" enctype ="multipart/form-data">
 
-      <h1 class="titre_center">Insert new post
-      </h1>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Title">Title</label>
+      <input type="text" class="form-control" name="title" id="Title" placeholder="Title">
+    </div>
 
-      
+    <div class="form-group col-md-6">
+      <label for="Price">Price</label>
+      <input type="text" class="form-control" name="price" id="Price" placeholder="Price">
+    </div>
+  </div>
 
-        <div>
-          <label> Post Title:
-          </label> 
-          <input type="text" name="title" size="40"/> 
-        </div>
+  <div class="form-group">
+    <label for="Description">Description</label>
+    <textarea  class="form-control"  name= "description" id="Description" placeholder="Description">
+</textarea>
+  </div>
 
-        <div>
-          <label> Post description:
-          </label> 
-          <input type="text" name="description" size="40"/>
-        </div> 
-      </div>
+  <div class="form-group">
+    <label for="short_description">short description</label>
+    <input type="text" class="form-control" name="short_description" id="short_description" placeholder="short description">
+  </div>
 
-      
-	  <label> Post price:
-        </label>
-		<input type="text" name="price" size="40"/> 
-      </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Qte">image</label>
+      <input type="file" class="form-control" name="image" id="image">
+    </div>
 
-        <label class="lbl"> Image:
-        </label>
-        <input type="file" name="image" size="40"/>      
-      </div>
+    <div class="form-group col-md-4">
+      <label for="Category">Category</label>
+      <select id="Category" class="form-control" name="category">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
 
-    
-       
+    <div class="form-group col-md-2">
+      <label for="inputZip">Qte</label>
+      <input type="text" class="form-control" name="qte" id="qte">
+    </div>
+  </div>
 
-      <div class="submitt">
-        <input  type="submit" name="submit"/>
-      </div>
+  <div class="form-group col-md-2">
+      <label for="old_price">old_price</label>
+      <input type="text" class="form-control" name="old_price" id="old_price">
+    </div>
+  </div>
 
-        </form>
+
+
+  <button type="submit" class="btn btn-primary" name="submit">Publish</button>
+</form>
+<!-- end formulaire-->
   </body>
 
 
@@ -64,17 +83,21 @@
 
 if(isset($_POST['submit']))
 {
-if($_POST['title']=='' or $_POST['description']=='' or $_POST["price"]=='')
+if($_POST['title']==''  or $_POST['description']=='' or $_POST["price"]=='')
+
 {
 echo("<script>alert ('fill all the field ')</script>");
-exit();
 }
 
 else
 {
 $title=$_POST['title'];
-$description=$_POST['description'];
 $price=$_POST['price'];
+$old_price=$_POST['old_price'];
+$description=$_POST['description'];
+$short_description=$_POST['short_description'];
+$qte=$_POST['qte'];
+$category=$_POST['category'];
 $image_name=$_FILES['image']['name'];
 $image_type=$_FILES['image']['type'];
 $image_size=$_FILES['image']['size'];
@@ -95,7 +118,8 @@ else
 echo("<script> alert('invalid file type' )</script>");
 }
 
-$sql ="INSERT INTO products (product_title,product_description,product_price,product_image) values('$title','$description','$price' ,'$image_name')";
+$sql ="INSERT INTO products (product_title,product_price, old_price,product_description,short_desc,product_quantity,product_image)
+ values('$title','$price','$old_price','$description','$short_description' ,'$qte','$image_name')";
 if(query($sql))
 {
 	echo("<script>alert ('post has been submitted !!')</script>");
