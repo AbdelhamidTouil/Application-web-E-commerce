@@ -47,16 +47,16 @@ while($row=fetch_array($query))
     <form  class="formedit"action="edit.php?edit_form=<?php echo $edit_id?>"  method="post" enctype ="multipart/form-data">
       <h1> inseert new post her 
       </h1>
-      <h3>post tite:
+      <h3>id
       </h3>
       <input type="text" name="id" size="60"  value="<?php echo "$id"; ?>"/>
-      <h3>author
+      <h3>title
       </h3>
       <input type="text" name="title" size="60" value="<?php echo "$title"; ?>"/>
       <h3>image
       </h3>
       <input type="file" name="image" size="60" value="<?php echo "$image"; ?>"/>
-      <h3>post content
+      <h3>price
       </h3>
       <textarea name="product_price"  rows="5" cols="63" >
         <?php echo "$product_price"; ?>
@@ -70,7 +70,7 @@ while($row=fetch_array($query))
 if(isset($_POST['update']))
 {
 $edit_id=$_GET['edit_form'];
-$title=$_POST['product_title'];
+$title=$_POST['title'];
 
 $product_price=$_POST['product_price'];
 $image_name=$_FILES['image']['name'];

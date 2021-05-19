@@ -20,6 +20,7 @@ while ($row = fetch_array($result))
  ?>
 
 <div class="card mt-4 mx-4" style="width: 14rem; height:25rem;">
+
 <h5 class="card-title"><?php echo $row['product_title'] ?></h5>
   <img src="images/<?php echo $row['product_image']; ?>" class="card-img-top" alt="image not found" style="height:50%">
   
@@ -31,7 +32,9 @@ while ($row = fetch_array($result))
     <a href="product_description.php?id=<?php echo $row['product_id'] ?>" class="card-link">see more</a>
 </div><!-- end card-->
 <!-- end card 2-->
+
 <?php 
+
 }
  ?>
 

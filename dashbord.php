@@ -22,17 +22,7 @@
     <link href="dashboard.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name
-      </a>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="logout.php">Sign out
-          </a>
-        </li>
-      </ul>
-    </nav>
+
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -43,7 +33,8 @@
                   <span data-feather="home">
                   </span>
                   Dashboard 
-                  <span class="sr-only">(current)
+                  <span class="sr-only">
+                   <a href="dashbord.php" >settings</a>
                   </span>
                 </a>
               </li>
@@ -62,7 +53,7 @@
             <h1 class="h2">Dashboard
             </h1>
           </div>
-          <?php $username=$_SESSION['nom'];?> 
+
          
           <!--login name -->
           <?php 
@@ -76,8 +67,7 @@ $image=$row["product_image"];
 
 $product_price=$row["product_price"];
 ?>
-          <h2>Section title
-          </h2>
+         
           <form action="dashbord.php" method="post">
             <div class="table-responsive">
               <table class="table table-striped table-sm">
