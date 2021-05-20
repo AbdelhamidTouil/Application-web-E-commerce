@@ -37,7 +37,7 @@
 
         <?php   if(isset($_SESSION['logged']) && $_SESSION['logged']==true &&  $_SESSION['nom'] == 'abdelhamid' &&  $_SESSION['password'] == 'abdou123') {?>
         <li class="nav-item">
-        <a class="nav-link" href="add_post.php">Add Post</a>
+        <a class="nav-link" href="dashbord.php">Setting</a>
         </li>
         <?php } ?>
       </ul>

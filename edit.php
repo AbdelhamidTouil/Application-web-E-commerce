@@ -13,17 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>update
     </title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
-    </script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
-    </script>
+ 
+   
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Latest compiled JavaScript -->
     <link rel="stylesheet" href="style.css">
@@ -34,38 +26,32 @@
     <?php
 $edit_id=$_GET['id'];
 
-$query= "SELECT * from products where product_id='$edit_id'";
-while($row=fetch_array($query))
-{
-    $id=$row['product_id'];
-    $title=$row["product_title"];
-    $image=$row["product_image"];
-    
-    $product_price=$row["product_price"];
-}
+$query= "SELECT * FROM products where product_id ='$edit_id'";
+$show = $connexion->query($query);
+$display=$show->fetch_assoc();
+
 ?>
     <form  class="formedit"action="edit.php?edit_form=<?php echo $edit_id?>"  method="post" enctype ="multipart/form-data">
       <h1> inseert new post her 
       </h1>
       <h3>id
       </h3>
-      <input type="text" name="id" size="60"  value="<?php echo "$id"; ?>"/>
+      <input type="text" name="id" size="60"  value="<?php echo $display['product_id']; ?>"/>
       <h3>title
       </h3>
-      <input type="text" name="title" size="60" value="<?php echo "$title"; ?>"/>
+      <input type="text" name="title" size="60" value="<?php echo $display['product_title']; ?>"/>
       <h3>image
       </h3>
-      <input type="file" name="image" size="60" value="<?php echo "$image"; ?>"/>
+      <input type="file" name="image" size="60" value="<?php echo $display['product_image']; ?>"/>
       <h3>price
       </h3>
       <textarea name="product_price"  rows="5" cols="63" >
-        <?php echo "$product_price"; ?>
+      <?php echo $display['product_price']; ?>
       </textarea> 
       <br>
       <input type="submit" name="update" value="Enregistrer" />
     </form>
-    <!-- footer --> 
-    <?php include ('footer.php');?> 
+
     <?php
 if(isset($_POST['update']))
 {

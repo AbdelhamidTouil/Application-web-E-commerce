@@ -32,9 +32,12 @@ while ($row = fetch_array($result))
 
     <div class="form-group">
       <label for="qte">Qte *</label>
-      <input type="number" class="form-control" id="qte"style="width:8ch" >
+      <input type="number" class="form-control"  name="qte" style="width:8ch" value="1" >
       <input type="hidden" name="product" value="<?php echo $row['product_title']; ?>">
       <input type="hidden" name="id" value="<?php echo $row['product_id']; ?>">
+     
+
+
     </div>
   
    

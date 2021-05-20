@@ -39,6 +39,8 @@
     if ($user != null) {
       $_SESSION['logged']=true;
       $_SESSION['nom'] = $user['username'];
+      
+      $_SESSION['user_id'] = $user['user_id'];
       $_SESSION['password'] = $user['password'];
       redirect('index.php');
       echo "you're now signed in Welcome ***";

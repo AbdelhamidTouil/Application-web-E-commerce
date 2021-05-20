@@ -1,24 +1,60 @@
 <div class="section_logo">
 	<div class ="row">
 		<div class="col-md-4" >
-			<a href="" class="btn btn-link"  id="logo" style='font-size: 40px;'> <span class="touil">Touil</span> <span class="shop">Shop</span> </a>
+			<a href="" class="btn btn-link"  id="logo" style='font-size: 40px;'>
+			 <span class="touil">Touil</span> <span class="shop">Shop</span> </a>
 		</div>
 
 		<div class="col-md-8">
 
-			<div class="float-end">
-				<div class="dropdown ">
-					<a class="btn btn-link dropdown-toggle text-danger " href="#" role="button" id="dropdownMenuLink " >
+			
+
+<!-------------->
+<div class="float-end">
+				<div class="dropdown">
+					<a class="btn btn-link dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 					<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Cart
-                    </a>
+  </a>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						<li>
-							<a class="dropdown-item " href="">product:0</a>
-						</li>
+
+
+
+				
 						
+						<li>
+							<a class="dropdown-item " href="cart.php">  <?php  echo !empty($_SESSION['count'])? $_SESSION['count']:""?> </a>
+						</li>
+
+						
+					
+
+						
+					
+
+
+
 					</ul>
 				</div>
 			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

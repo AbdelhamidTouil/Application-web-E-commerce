@@ -17,6 +17,7 @@ if($product != null){
 
 
 
+    
 
 
 echo("<script> alert('Deleted ');</script>");

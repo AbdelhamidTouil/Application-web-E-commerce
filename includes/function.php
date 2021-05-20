@@ -34,15 +34,15 @@ function logout()
     redirect('index.php');
 }
 
-/*function empty_cart($id,$price)
+function empty_cart($id,$price)
 {
 
-    unset($_SESSION['product'.$id]);
+    unset($_SESSION['products_'.$id]);
     $_SESSION['count'] -= 1;
     $_SESSION['totaux'] -= $price;
     redirect('cart.php');
 
-}*/
+}
 
 
 

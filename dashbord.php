@@ -34,7 +34,7 @@
                   </span>
                   Dashboard 
                   <span class="sr-only">
-                   <a href="dashbord.php" >settings</a>
+                   
                   </span>
                 </a>
               </li>
@@ -42,7 +42,7 @@
                 <a class="nav-link" href="insert_post.php">
                   <span data-feather="users">
                   </span>
-                  add post
+                  <a href="add_post.php" >Add products</a>
                 </a>
               </li>
             </ul>
