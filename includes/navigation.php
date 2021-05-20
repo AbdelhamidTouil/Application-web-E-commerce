@@ -44,7 +44,7 @@
 
       <form action="search.php" method="post" class="d-flex">
         <input class="form-control me-2" type="search" name="search" placeholder="Search prodacts" aria-label="Search">
-        <button class="btn_search " type="submit"> SEARCH </button>
+        <button class="btn_search " type="submit"> Search </button>
       </form>
 
     </div>

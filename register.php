@@ -1,9 +1,9 @@
 
-<!-- includes -->
-
+<!--  start includes -->
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
+<!--  end  includes -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@
     $password = $_POST['password'];
     $sql = "INSERT INTO users (username, email,password) VALUES( '$Username' , '$email', '$password') ";
     if (query($sql)) {
-      echo "you're now signed up Welcome ***";
+      echo("<script>alert ('you're now signed up Welcome ***')</script>");
     } 
   }
   ?>

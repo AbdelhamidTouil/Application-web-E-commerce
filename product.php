@@ -1,15 +1,11 @@
 
-<!-- includes -->
-
+<!-- start includes -->
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
+<!-- end  includes -->
 
-
-
-
-
-<div class="row">
+<div class="row"><!-- start row-->
 
 <!--cart   product-->
 <?php
@@ -30,25 +26,13 @@ while ($row = fetch_array($result))
  <span class="prix_ancienne"> <strike><?php echo $row['old_price'].'dh' ?></strike> </span></p>
   <p class="description"> <?php echo $row['product_description'] ?></p>
     <a href="product_description.php?id=<?php echo $row['product_id'] ?>" class="card-link">see more</a>
-</div><!-- end card-->
-<!-- end card 2-->
+</div>
+<!-- end card -->
 
 <?php 
 
 }
  ?>
-
-
 </div>
-
-
-
-
-
-
-
-
-
 </div><!-- end row-->
-<script src="includes/javascript/script.js"></script>
 <?php include ('includes/footer.php')  ?>

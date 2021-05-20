@@ -6,14 +6,13 @@
 <?php include ('includes/header.php')  ?>
 
 
-<div class="row">
-
+<div class="row"> 
 
 <!--card cities -->
 <div class="card mt-4  mx-4" style="width: 14rem;">
   <div class="card-header">
-  Cities
-  </div>
+  Cities</div>
+
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Oujda <span class="city  p-2 float-end">1</span></li>
     <li class="list-group-item">Tanger <span class="city  p-2 float-end">2</span></li>
@@ -26,21 +25,15 @@
 <!--end card cities-->
 
 
+<!-- start slider -->
 <div class="w3-content w3-section" style=" max-width:700px ; max-height:400px">
   <img class="mySlides" src="images/pc.jpg" style="width:100% ;height:100%">
   <img class="mySlides" src="images/tablete.jpg" style="width:100% ;height:100%">
   <img class="mySlides" src="images/product5.jpg" style="width:100%; height:100%">
 </div>
-
-
-
-
+<!--end slider-->
 </div>
-
-
-
 <div class="row">
-
 <!--cart   product-->
 <?php
  $query = "SELECT * from products";

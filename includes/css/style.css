@@ -13,8 +13,9 @@ a{text-decoration: none !important;}
 .btn_search{color:white;
 background-color: rgb(250, 145, 48);
 border-radius: 5px;
-border-style: none;}
+border-style: none;
+width: 40%;}
 
 .mySlides {display:none;}
-.section_logo{background-color:rgb(235, 193, 235);}
+.section_logo{background-color:rgba(248, 150, 191, 0.342);}
 .section{padding-left: 20px;padding-right: 20px;}

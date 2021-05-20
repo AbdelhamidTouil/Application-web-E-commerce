@@ -123,5 +123,6 @@ $product_price=$row["product_price"];
         <!--end main-->
       </div>
     </div>
+    <?php include ('includes/footer.php')  ?>
   </body>
 </html>

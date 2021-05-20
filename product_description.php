@@ -1,14 +1,13 @@
+
+<!--start includes-->
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
-
-
-
-    
-<div class="row">
+  <!--end  includes-->
+<div class="row">  <!--start  row-->
 <?php
 
-$id = $_GET['id'];
+$id = $_GET['id']; // recuperation de id_product
  $query = "SELECT * from products where product_id ='$id'";
  $result = query($query);
 while ($row = fetch_array($result))
@@ -32,12 +31,11 @@ while ($row = fetch_array($result))
 
     <div class="form-group">
       <label for="qte">Qte *</label>
-      <input type="number" class="form-control"  name="qte" style="width:8ch" value="1" >
+      <input type="number" class="form-control"  name="qte" style="width:8ch" value="1"  min="1">
+      
       <input type="hidden" name="product" value="<?php echo $row['product_title']; ?>">
       <input type="hidden" name="id" value="<?php echo $row['product_id']; ?>">
      
-
-
     </div>
   
    
@@ -51,15 +49,6 @@ while ($row = fetch_array($result))
 <?php } ?>
 
 </div>
-
-
-
-
-
-
-
-
-
 
 </div>
 <?php include ('includes/footer.php')  ?>

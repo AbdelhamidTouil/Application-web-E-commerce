@@ -1,65 +1,77 @@
+
+
+<!-- includes -->
+
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact</title>
 
+<!--===============================================================================================-->
 
+<!--===============================================================================================-->
+</head>
+<body>
 
-<!------ Include the above in your HEAD tag ---------->
+	<div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<form class="contact2-form validate-form"  method="POST" action="contact.php">
+					<span class="contact2-form-title">
+						Contact Us
+					</span>
 
-<div class="container">
-	<div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <div class="well well-sm">
-          <form class="form-horizontal" action="" method="post">
-          <fieldset>
-            <legend class="text-center">Contact us</legend>
-    
-            <!-- Name input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="name">Name</label>
-              <div class="col-md-9">
-                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-              </div>
-            </div>
-    
-            <!-- Email input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Your E-mail</label>
-              <div class="col-md-9">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
-              </div>
-            </div>
-    
-            <!-- Message body -->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="message">Your message</label>
-              <div class="col-md-9">
-                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
-              </div>
-            </div>
-    
-            <!-- Form actions -->
-            <div class="form-group">
-              <div class="col-md-12 text-right">
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-              </div>
-            </div>
-          </fieldset>
-          </form>
-        </div>
-      </div>
+					
+
+					<div class="wrap-input2 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input2" type="text" name="email">
+						<span class="focus-input2" data-placeholder="EMAIL"></span>
+					</div>
+
+					<div class="wrap-input2 validate-input" data-validate = "Message is required">
+						<textarea class="input2" name="message"></textarea>
+						<span class="focus-input2" data-placeholder="MESSAGE"></span>
+					</div>
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+              <button type="submit" name="submit" class="btn btn-primary button" href="index.php">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
-</div>
-    
+
+  <?php
+  
+if(isset($_POST['submit']))
+{
+if (isset( $_POST['email'], $_POST['message'])) {
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  $sql = "INSERT INTO contacts (email,message) VALUES('$email','$message')";
+  if (query($sql)) {
+    echo("<script>alert ('message send ***')</script>");
+     } 
+   }
+}
+?>
 
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-
-
-
-
-
-
-
-
+	  gtag('config', 'UA-23581568-13');
+	</script>
 <?php include ('includes/footer.php')  ?>
+</body>
+</html>
