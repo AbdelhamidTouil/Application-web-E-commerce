@@ -1,22 +1,11 @@
 
-
-<!-- includes -->
-
+<!-- start includes -->
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
-<?php include ('includes/header.php')  ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Contact</title>
+<?php include ('includes/header.php')?>
+<!-- end  includes -->
 
-<!--===============================================================================================-->
-
-<!--===============================================================================================-->
-</head>
-<body>
-
-	<div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
+	<div class="bg-contact2">
 		<div class="container-contact2">
 			<div class="wrap-contact2">
 				<form class="contact2-form validate-form"  method="POST" action="contact.php">
@@ -63,15 +52,5 @@ if (isset( $_POST['email'], $_POST['message'])) {
 ?>
 
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-23581568-13');
-	</script>
 <?php include ('includes/footer.php')  ?>
-</body>
-</html>

@@ -44,8 +44,4 @@ function empty_cart($id,$price)
 
 }
 
-
-
-
-
 ?>

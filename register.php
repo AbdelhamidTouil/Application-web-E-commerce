@@ -5,9 +5,7 @@
 <?php include ('includes/header.php')  ?>
 <!--  end  includes -->
 
-<!DOCTYPE html>
-<html lang="en">
-<body>
+<!--  start  form -->
   <form class="container" method="POST" action="register.php">
     <div class="form-group">
       <label for="Username">Username : </label>
@@ -23,6 +21,8 @@
     </div>
     <button type="submit" class="btn btn-primary button" href="index.php">Submit</button>
   </form>
+  
+<!--  end  form -->
   <?php
 
   if (isset($_POST['Username'], $_POST['email'], $_POST['password'])) {
@@ -35,7 +35,3 @@
     } 
   }
   ?>
-
-</body>
-
-</html>

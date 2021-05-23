@@ -9,19 +9,6 @@
 
 		<div class="col-md-8">
 
-			<!---------------------->
-			<?php   if(isset($_SESSION['logged']) && $_SESSION['logged']==true &&  $_SESSION['nom'] == 
-			'abdelhamid' &&  $_SESSION['password'] == 'abdou123') {?>
-			<div class="float-end">
-			<a href="message.php" class="btn btn-link"   style='font-size: 30px;'>
-			<i class="fa fa-comment" aria-hidden="true"></i>
-			</a>
-			</div>
-<?php } ?>
-
-
-
-<!-------------->
 <?php if(@$_SESSION['count'] > 0) {?>
 <div class="float-end">
 				<div class="dropdown">

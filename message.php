@@ -5,7 +5,8 @@
 <?php include ('includes/header.php')  ?>
 <!-- end  includes -->
 
-<div class="row"><!-- start row-->
+<!-- start row-->
+<div class="row">
 
 
 <?php

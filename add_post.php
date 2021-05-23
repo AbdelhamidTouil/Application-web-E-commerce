@@ -1,8 +1,9 @@
-<!-- includes -->
 
+<!-- start includes -->
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
+<!-- end  includes -->
 
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
     <title>Document
     </title>
     <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	
   </head>
   <body>
 <!-- formulaire -->
@@ -50,17 +51,13 @@
     </div>
 
     <div class="form-group col-md-4">
-      <label for="Category">Category</label>
-      <select id="Category" class="form-control" name="category">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
+    <label for="inputZip">Qte</label>
+      <input type="text" class="form-control" name="qte" id="qte">
     </div>
 
     <div class="form-group col-md-2">
       <label for="inputZip">Qte</label>
       <input type="text" class="form-control" name="qte" id="qte">
-    </div>
   </div>
 
   <div class="form-group col-md-2">
@@ -91,6 +88,7 @@ echo("<script>alert ('fill all the field ')</script>");
 
 else
 {
+$qte=$_POST['qte'];
 $title=$_POST['title'];
 $price=$_POST['price'];
 $old_price=$_POST['old_price'];
@@ -118,8 +116,8 @@ else
 echo("<script> alert('invalid file type' )</script>");
 }
 
-$sql ="INSERT INTO products (product_title,product_price, old_price,product_description,short_desc,product_quantity,product_image)
- values('$title','$price','$old_price','$description','$short_description' ,'$qte','$image_name')";
+$sql ="INSERT INTO products (product_category_id,product_title,product_price, old_price,product_description,short_desc,product_quantity,product_image)
+ values('$qte','$title','$price','$old_price','$description','$short_description' ,'$qte','$image_name')";
 if(query($sql))
 {
 	echo("<script>alert ('post has been submitted !!')</script>");

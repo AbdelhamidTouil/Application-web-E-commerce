@@ -5,34 +5,31 @@
 <?php include ('includes/header.php')  ?>
 <!-- end  includes -->
 
-<div class="row"><!-- start row-->
-
-<!--cart   product-->
-<?php
+<!-- start row  -->
+    <div class="row">
+    <?php
  $query = "SELECT * from products";
  $result = query($query);
-while ($row = fetch_array($result))
+ while ($row = fetch_array($result))
 {
  ?>
-
-<div class="card mt-4 mx-4" style="width: 14rem; height:25rem;">
-
-<h5 class="card-title"><?php echo $row['product_title'] ?></h5>
-  <img src="images/<?php echo $row['product_image']; ?>" class="card-img-top" alt="image not found" style="height:50%">
+<!-- start card product  -->
+        <div class="col-md-4">
+            <div class="card mt-3">
+                <div class="product-1 align-items-center p-2 text-center"> 
+                <img src="images/<?php echo $row['product_image'];?>" class="rounded " 
+                width="200" height="200">
+                    <h5><?php echo $row['product_title'] ?></h5>
+                    <div class="mt-3 info"> <span class="text1 d-block"><?php echo $row['product_description'] ?></span> <span class="text1"><?php echo $row['short_desc'] ?></span> </div>
+                    <div class=" cost mt-3 text-dark"> <span><?php echo $row['product_price'].'dh' ?></span> <span class="prix_ancienne"> <strike><?php echo $row['old_price'].'dh' ?></strike> </span>
+                        <div class=" star mt-3 align-items-center">  <a href="product_description.php?id=<?php echo $row['product_id'] ?>" class="card-link">see more</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end card product  -->
+    <?php } ?>
   
-    <h3 class="card-text"><?php echo $row['product_title'] ?></h3>
-  
- <p><span class="badge badge-success bg-success"><?php echo $row['product_price'].'dh' ?></span>
- <span class="prix_ancienne"> <strike><?php echo $row['old_price'].'dh' ?></strike> </span></p>
-  <p class="description"> <?php echo $row['product_description'] ?></p>
-    <a href="product_description.php?id=<?php echo $row['product_id'] ?>" class="card-link">see more</a>
 </div>
-<!-- end card -->
-
-<?php 
-
-}
- ?>
-</div>
-</div><!-- end row-->
+<!-- end row  -->
 <?php include ('includes/footer.php')  ?>

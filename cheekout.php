@@ -2,7 +2,7 @@
   require ('includes/function.php');
 if(isset($_POST['id']) && isset($_POST['qte'])){
     $id=$_POST['id'];
-    $qt=$post['qte'];
+
     $qte=$_POST['qte'];
     $sql ="SELECT * FROM products where product_id = '$id'";
     $result =query($sql);

@@ -11,13 +11,14 @@
   ?>
   <!--start row -->
 <div class="row">
-	<!-- start cart product-->
+	
 	<?php
 if($result -> num_rows > 0)
 {
 while ($row = fetch_array($result))
 {
  ?>
+ <!-- start cart product-->
 	<div class="card mt-4 mx-2" style="width: 14rem; height:25rem;">
 		<h5 class="card-title">
 			<?php echo $row['product_title'] ?>
@@ -43,17 +44,17 @@ while ($row = fetch_array($result))
 			<a href="product_description.php?id=
 				<?php echo $row['product_id'] ?>" class="card-link">see more
 			</a>
-		</div>
+	</div>
 	
 		<!-- end  product card -->
 		<?php 
 }
 }
 else{
-    echo 'no product found !!';
-}
- ?>
-	</div>
+	echo("<script>alert ('no product found !!')</script>");
+    }
+       ?>
+	
 </div>
 <!-- end row-->
 <?php include ('includes/footer.php')  ?>

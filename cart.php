@@ -1,9 +1,11 @@
-<?php include ('includes/function.php'); ?>
-<?php include ('includes/logo.php'); ?>
-<?php include ('includes/header.php') ; ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<!--start includes -->
+<?php include ('includes/function.php') ?>
+<?php include ('includes/logo.php') ?>
+<?php include ('includes/header.php')  ?>
+<!--end includes -->
 
 
+<!--start row -->
 <div class="row">
 
     <div class="col-md-12">
@@ -12,13 +14,11 @@
     $item_number=1;
     $amount=1;
     $quantity=1;
-    
-    
     ?>
         <div class="card mt-2 mb-3 mx-2">
         <form action="https://www.sandbox.paypal.com/cgi-bin/websrc" method="post">
         <input type="hidden" name="cmd" value="_cart">
-        <input type="hidden" name="business" value="ilyass9119@gmail.com">
+        <input type="hidden" name="business" value="abdelhamidtouil59@gmail.com">
         <table class ="table table-hover">
                
                <thead>
@@ -44,20 +44,24 @@
             <tbody>
                 <td>  
                      <?php  echo !empty($product['product'])? $product['product']:""?> 
-            
                </td>
+
                 <td>
-                <?php  echo !empty($product['price'])? $product['price']:""?> 
+                     <?php  echo !empty($product['price'])? $product['price']:""?> 
                 </td>
+
                 <td>
-                <?php  echo !empty($product['qte'])? $product['qte']:""?> 
+                     <?php  echo !empty($product['qte'])? $product['qte']:""?> 
                 </td>
+
                 <td>
-                <?php  echo !empty($product['total'])? $product['total']:""?> 
+                     <?php  echo !empty($product['total'])? $product['total']:""?> 
                 </td>
+
                 <td>
-                    <a href="cancel_cart.php?id=<?php  echo !empty($product['id'])? $product['id']:""?>&price=<?php  echo !empty($product['total'])? $product['total']:""?> " class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                     <a href="cancel_cart.php?id=<?php  echo !empty($product['id'])? $product['id']:""?>&price=<?php  echo !empty($product['total'])? $product['total']:""?> " class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
+
                 <input type="hidden" name="item_name_<?php  echo $item_name?>" value="<?php  echo !empty($product['product'])? $product['product']:""?> ">
                 <input type="hidden" name="item_number_<?php  echo $item_number?>" value="<?php  echo !empty($product['id'])? $product['id']:""?> ">
                 <input type="hidden" name="amount_<?php  echo $amount?>" value="<?php  echo !empty($product['price'])? $product['price']:""?> ">
@@ -77,8 +81,6 @@
              if(isset($_SESSION['totaux']) && $_SESSION['totaux'] >0 )
             {
                 ?>
-            
-
        
             <?php
             }
@@ -106,13 +108,17 @@
       
         
     </div>
-</div>
-
-<button type="submit" name="upload" class="btn btn-success " >
-        <i class="fa fa-credit-card"></i>validate your purchase
+       <!--start button submit -->
+        <button type="submit" name="upload" class="btn btn-success " >
+           <i class="fa fa-credit-card"></i>validate your purchase
         </button>
+        <!--end button submi -->
 
         </form>
+        <!--end form -->
+</div>
+<!--end row -->
+      
 <?php
 include('includes/footer.php');
  ?>
