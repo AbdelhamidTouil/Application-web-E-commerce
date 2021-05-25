@@ -3,21 +3,7 @@
 <?php include ('includes/function.php') ?>
 <?php include ('includes/logo.php') ?>
 <?php include ('includes/header.php')  ?>
-<!-- end  includes -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document
-    </title>
-    <link rel="stylesheet" href="style.css">
-	
-  </head>
-  <body>
+<!-- end  includes -->	
 <!-- formulaire -->
 <form  action="add_post.php"  method="post" enctype ="multipart/form-data">
 
@@ -51,8 +37,8 @@
     </div>
 
     <div class="form-group col-md-4">
-    <label for="inputZip">Qte</label>
-      <input type="text" class="form-control" name="qte" id="qte">
+    <label for="inputZip">category</label>
+      <input type="text" class="form-control" name="category" id="qte">
     </div>
 
     <div class="form-group col-md-2">
@@ -66,16 +52,13 @@
     </div>
   </div>
 
-
-
   <button type="submit" class="btn btn-primary" name="submit">Publish</button>
 </form>
 <!-- end formulaire-->
-  </body>
 
 
   <?php include ('includes/footer.php');?>
-</html> <!-- enb html -->
+
 <?php
 
 if(isset($_POST['submit']))
@@ -117,7 +100,7 @@ echo("<script> alert('invalid file type' )</script>");
 }
 
 $sql ="INSERT INTO products (product_category_id,product_title,product_price, old_price,product_description,short_desc,product_quantity,product_image)
- values('$qte','$title','$price','$old_price','$description','$short_description' ,'$qte','$image_name')";
+ values('$category','$title','$price','$old_price','$description','$short_description' ,'$qte','$image_name')";
 if(query($sql))
 {
 	echo("<script>alert ('post has been submitted !!')</script>");

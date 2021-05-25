@@ -5,6 +5,7 @@
 <?php include ('includes/header.php')?>
 <!-- end  includes -->
 <!--start container-->
+
 <div class="container-fluid">
 	<!--start row-->
 	<div class="row">
@@ -56,7 +57,7 @@
 				<h1 class="h2">Dashboard
             </h1>
 			</div>
-			
+	
 			<?php 
 $query= "SELECT * FROM products ";
 $result=query($query);

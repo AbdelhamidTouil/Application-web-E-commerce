@@ -24,9 +24,9 @@
 
 <!-- start slider -->
 <div class="w3-content w3-section" style=" max-width:800px ; max-height:400px">
-  <img class="mySlides" src="images/pc.jpg" style="width:100% ;height:100%">
-  <img class="mySlides" src="images/tablete.jpg" style="width:100% ;height:100%">
-  <img class="mySlides" src="images/product5.jpg" style="width:100%; height:100%">
+  <img class="mySlides" src="images/i9.jpg" style="width:100% ;height:100%">
+  <img class="mySlides" src="images/i8.jpg" style="width:100% ;height:100%">
+  <img class="mySlides" src="images/i5.jpg" style="width:100%; height:100%">
 </div>
 <!--end slider-->
 
