@@ -14,7 +14,7 @@
     <li class="list-group-item">Oujda <span class="city  p-2 float-end">1</span></li>
     <li class="list-group-item">Tanger <span class="city  p-2 float-end">2</span></li>
     <li class="list-group-item">Rabat <span class="city  p-2 float-end">3</span></li>
-    <li class="list-group-item">caza <span class="city  p-2 float-end">1</span></li>
+    <li class="list-group-item">taza <span class="city  p-2 float-end">1</span></li>
     <li class="list-group-item">berkan <span class="city  p-2 float-end">2</span></li>
     <li class="list-group-item">jrrada <span class="city  p-2 float-end">3</span></li>
   </ul>
@@ -24,9 +24,9 @@
 
 <!-- start slider -->
 <div class="w3-content w3-section" style=" max-width:800px ; max-height:400px">
-  <img class="mySlides" src="images/i9.jpg" style="width:100% ;height:100%">
-  <img class="mySlides" src="images/i8.jpg" style="width:100% ;height:100%">
-  <img class="mySlides" src="images/i5.jpg" style="width:100%; height:100%">
+  <img class="mySlides" src="images/l1.jpg" style="width:100% ;height:100%">
+  <img class="mySlides" src="images/t2.jpg" style="width:100% ;height:100%">
+  <img class="mySlides" src="images/f4.jpg" style="width:100%; height:100%">
 </div>
 <!--end slider-->
 

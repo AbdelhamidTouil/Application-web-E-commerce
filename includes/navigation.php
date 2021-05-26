@@ -35,6 +35,12 @@
         <a class="nav-link" href="contact.php">Contact</a>
         </li>
 
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.php">About us</a>
+        </li>
+
         <?php   if(isset($_SESSION['logged']) && $_SESSION['logged']==true &&  $_SESSION['nom'] == 'abdelhamid' &&  $_SESSION['password'] == 'abdou123') {?>
         <li class="nav-item">
         <a class="nav-link" href="dashbord.php">Dashbord</a>
