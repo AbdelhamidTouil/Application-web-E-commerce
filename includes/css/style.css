@@ -1,24 +1,42 @@
-body{background-color: rgb(230, 234, 235); }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+body{background-color: rgb(245, 244, 244)}
+
 
 a{text-decoration: none !important;}
 
 #logo{color:rgb(243, 97, 53);font-family: fantasy;}
-.touil{color:rgb(129, 166, 236)}
+.touil{color:rgb(129, 166, 236);}
 .dropdown{color:red;}
 
 
-   
 
 
 .btn_search{color:white;
 background-color: rgb(250, 145, 48);
 border-radius: 5px;
 border-style: none;
-width: 40%;}
-
+padding-left: 15px;
+padding-right: 15px;
+}
 .mySlides {display:none;}
 .section_logo{background-color:rgb(250, 252, 223);}
 .section{padding-left: 20px;padding-right: 20px;}
 
 
 .formedit{text-align: center;}
+#card_ville{width: 14rem; height: 27rem;}
+#card{width:14rem;height:25rem;}
+#slider{ max-width:800px ; max-height:400px;}
+.list-group {width: 100px;}
+
+@media only screen and (max-width:375px) {
+
+ 
+#card{width:23rem;height:25rem;}
+#card_ville{width: 6rem;  height: 14rem; font-size: 10px;}
+#slider{max-width:230px ; max-height:14rem;}
+.list-group {width: 70px;font-size: 8px;}
+}
+

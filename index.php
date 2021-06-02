@@ -1,29 +1,30 @@
 
 <!-- start includes -->
 <?php include ('includes/function.php') ?>
-<?php include ('includes/logo.php') ?>
-<?php include ('includes/header.php')  ?>
+
+<?php include ('includes/header.php') ?>
+<link rel="stylesheet" href="includes/css/style.css">
 <!-- end  includes -->
  <!--start row1-->
 <div class="row"> <!--start row1-->
 
 <!-- start card cities -->
-<div class="card mt-4  mx-4" style="width: 14rem;">
+<div class="card mt-3  mx-4" id="card_ville">
   <div class="card-header">Cities</div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Oujda <span class="city  p-2 float-end">1</span></li>
-    <li class="list-group-item">Tanger <span class="city  p-2 float-end">2</span></li>
-    <li class="list-group-item">Rabat <span class="city  p-2 float-end">3</span></li>
-    <li class="list-group-item">taza <span class="city  p-2 float-end">1</span></li>
-    <li class="list-group-item">berkan <span class="city  p-2 float-end">2</span></li>
-    <li class="list-group-item">jrrada <span class="city  p-2 float-end">3</span></li>
+    <li class="list-group-item">Oujda</li>
+    <li class="list-group-item">Tanger </li>
+    <li class="list-group-item">Rabat </li>
+    <li class="list-group-item">taza </li>
+    <li class="list-group-item">berkan </li>
+    <li class="list-group-item">jrrada </li>
   </ul>
 </div> 
 <!--end card cities-->
 
 
 <!-- start slider -->
-<div class="w3-content w3-section" style=" max-width:800px ; max-height:400px">
+<div class="w3-content w3-section" id="slider">
   <img class="mySlides" src="images/l1.jpg" style="width:100% ;height:100%">
   <img class="mySlides" src="images/t2.jpg" style="width:100% ;height:100%">
   <img class="mySlides" src="images/f4.jpg" style="width:100%; height:100%">
@@ -42,7 +43,7 @@ while ($row = fetch_array($result))
 {
  ?>
 <!--start cart product-->
-<div class="card mt-4 mx-4" style="width: 14rem;height:25rem;">
+<div class="card mt-4 mx-4" id="card">
 <h5 class="card-title"><?php echo $row['product_title'] ?></h5>
   <img src="images/<?php echo $row['product_image']; ?>" 
   class="card-img-top" alt="image not found" style="height:50%">
